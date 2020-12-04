@@ -8,10 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Page</title>
     <!-- End-->
-    <meta http-equiv="refresh" content="10">
-
     <link rel="stylesheet" href="https://github.com/smarsha92/theone/blob/theonesite/docs/main.css">
-
+    <link rel="stylesheet" href="./styles/main.css">
     <!-- Favi -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/docs/Favicon/favicon-32x32.png">
@@ -21,232 +19,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js" integrity="sha512-6MT8e40N5u36Um5SXKtwZmoKcCSg1XaKtexnXZPpQ4iJDHrBEHXKz37fnDovXezsaCd4oKCH5Y+vrcl7qpLPoA==" crossorigin="anonymous"></script>
 </head>
-<style>
-    /* Header */
-    
-    body {
-        display: block;
-        padding: 0px;
-        margin: 0px;
-        height: 100vh;
-        background: grey;
-    }
-    
-    .preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-        width: 100%;
-        height: 100%;
-        background: #ddd7d7;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-transition: opacity 3s ease;
-        transition: opacity 3s ease;
-    }
-    
-    .preloader h3 {
-        top: 55%;
-        position: absolute;
-    }
-    
-    .loading {
-        height: 75px;
-    }
-    
-    .preloader-finish {
-        opacity: 0;
-        pointer-events: none;
-    }
-    /* Header */
-    
-    .head2 {
-        display: block;
-        padding: 80px;
-        text-align: center;
-        color: white;
-        overflow: hidden;
-        background: chocolate;
-    }
-    
-    .head2 h1 {
-        margin-top: 0px;
-        font-size: 10vw;
-        color: #fff;
-        font-weight: 900;
-        text-transform: uppercase;
-        margin-bottom: 0px;
-    }
-    
-    .head2 em {
-        color: #0eedf5;
-        font-weight: 600;
-        font-style: normal;
-    }
-    
-    .head2 span {
-        display: inline-block;
-        margin-top: -20px;
-        font-weight: 300;
-        font-size: 48px;
-        color: #fff;
-    }
-    /* End */
-    
-    @-webkit-keyframes scroll {
-        0% {
-            -webkit-transform: translateX(0);
-            transform: translateX(0);
-        }
-        100% {
-            -webkit-transform: translateX(calc(-250px * 7));
-            transform: translateX(calc(-250px * 7));
-        }
-    }
-    
-    @keyframes scroll {
-        0% {
-            -webkit-transform: translateX(0);
-            transform: translateX(0);
-        }
-        100% {
-            -webkit-transform: translateX(calc(-250px * 7));
-            transform: translateX(calc(-250px * 7));
-        }
-    }
-    
-    .slider {
-        -webkit-box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-        height: 100px;
-        margin: auto;
-        overflow: hidden;
-        position: relative;
-        width: 960px;
-    }
-    
-    .slider::before,
-    .slider::after {
-        content: "";
-        height: 100px;
-        position: absolute;
-        width: 200px;
-        z-index: 2;
-    }
-    
-    .slider::after {
-        right: 0;
-        top: 0;
-        -webkit-transform: rotateZ(180deg);
-        transform: rotateZ(180deg);
-    }
-    
-    .slider::before {
-        left: 0;
-        top: 0;
-    }
-    
-    .slider .slide-track {
-        -webkit-animation: scroll 40s linear infinite;
-        animation: scroll 40s linear infinite;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        width: calc(250px * 14);
-    }
-    
-    .slider .slide {
-        height: 100px;
-        width: 250px;
-    }
-    
-    header {
-        position: absolute;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-    }
-    
-    header .activator {
-        padding: 1em;
-        border-radius: 100%;
-        cursor: pointer;
-    }
-    
-    header .activator:hover {
-        background: #1e2129;
-    }
-    
-    img {
-        width: 100%;
-        max-width: 50px;
-    }
-    
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    nav {
-        place-content: center;
-        display: -ms-grid;
-        display: grid;
-        place-content: center;
-        background: rgba(41, 46, 56, 0);
-        border-radius: 0 1em 1em 0;
-        padding: .5em;
-        -webkit-clip-path: ellipse(50% 50% at -50% 50%);
-        clip-path: ellipse(50% 50% at -50% 50%);
-    }
-    
-    nav ul {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-    }
-    
-    nav ul li a {
-        display: block;
-        padding: .5em;
-        margin: 0 .5em;
-        border-radius: 50%;
-        text-decoration: none;
-        font-size: 20px;
-    }
-    
-    nav ul li a img {
-        opacity: 0;
-        -webkit-transform: translateX(-10px);
-        transform: translateX(-10px);
-    }
-    
-    @media (min-width: 640px) {
-        .container {
-            max-width: 640px;
-        }
-        .nav-links {
-            max-width: 640px;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-        }
-    }
-    
-    .media {
-        max-width: 600px;
-        border: 5px solid grey;
-    }
-    /*# sourceMappingURL=main.css.map */
-</style>
 
 <body>
     <!--Preloader-->
@@ -284,10 +56,6 @@
         <h4>circa 2020</h4>
     </div>
     <main class="px-16 py-6">
-        <div><a href="#">Four</a></div>
-        <div><a href="#">Five</a></div>
-
-
         <div>
             <h4 class="font-bold uppercase mt-12">More</h4>
 
@@ -313,7 +81,27 @@
             </div>
     </main>
     <!--End-->
-    <!--Nav-->
+    <!--Card-->
+    <div class="section-1">
+        <div class="grid-containr">
+            <div class="card-1">
+                <img src="1.jpg" alt="">
+                <h1>Card one</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus nemo voluptate odio modi sapiente quo asperiores, fugit, corrupti error nam dicta, temporibus perspiciatis tempora ut alias itaque. Nam, libero ad?</p>
+            </div>
+            <div class="card-2">
+                <img src="1.jpg" alt="">
+                <h1>Card two</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus nemo voluptate odio modi sapiente quo asperiores, fugit, corrupti error nam dicta, temporibus perspiciatis tempora ut alias itaque. Nam, libero ad?</p>
+            </div>
+            <div class="card-3">
+                <img src="1.jpg" alt="">
+                <h1>Card three</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus nemo voluptate odio modi sapiente quo asperiores, fugit, corrupti error nam dicta, temporibus perspiciatis tempora ut alias itaque. Nam, libero ad?</p>
+            </div>
+        </div>
+    </div>
+
     <!--End-->
     <!--Grid
     <div class="grid-container">
@@ -396,6 +184,7 @@
     </div>
 <!-- Something random -->
     <div class="media">
+        <h2>Media</h2>
         <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/652843098&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
         <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/salim-marshall-1" title="King Shiit92" target="_blank" style="color: #cccccc; text-decoration: none;">King Shiit92</a> · <a href="https://soundcloud.com/salim-marshall-1/sets/soundcloud-weekly" title="SoundCloud Weekly"
                 target="_blank" style="color: #cccccc; text-decoration: none;">SoundCloud Weekly</a>
