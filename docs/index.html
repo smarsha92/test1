@@ -240,6 +240,11 @@
             display: flex;
         }
     }
+    
+    .container {
+        width: 100px;
+        height: 300px;
+    }
     /*# sourceMappingURL=main.css.map */
 </style>
 
@@ -390,64 +395,66 @@
         </div>
     </div>
 <!-- Something random -->
-    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/652843098&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-    <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/salim-marshall-1" title="King Shiit92" target="_blank" style="color: #cccccc; text-decoration: none;">King Shiit92</a> · <a href="https://soundcloud.com/salim-marshall-1/sets/soundcloud-weekly" title="SoundCloud Weekly"
-            target="_blank" style="color: #cccccc; text-decoration: none;">SoundCloud Weekly</a></div>
-    <!-- Scripts -->
-    <script>
-        var card = document.getElementById('activator');
-        var tl = gsap.timeline({
-            defaults: {
-                ease: "power2.inOut"
-            }
-        })
+    <div class="container">
+        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/652843098&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+        <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/salim-marshall-1" title="King Shiit92" target="_blank" style="color: #cccccc; text-decoration: none;">King Shiit92</a> · <a href="https://soundcloud.com/salim-marshall-1/sets/soundcloud-weekly" title="SoundCloud Weekly"
+                target="_blank" style="color: #cccccc; text-decoration: none;">SoundCloud Weekly</a>
+        </div>
+        <!-- Scripts -->
+        <script>
+            var card = document.getElementById('activator');
+            var tl = gsap.timeline({
+                defaults: {
+                    ease: "power2.inOut"
+                }
+            })
 
-        var toggle = false;
+            var toggle = false;
 
-        tl.to('.activator', {
-            background: 'transparent',
-            'borderRadius': '5em 0 0 5em'
-        });
-        tl.to('nav', {
-            'clipPath': 'ellipse(100% 100% at 50% 50%)'
-        }, "-=.5")
-        tl.to('nav img', {
-            opacity: 1,
-            transform: 'translateX(0)',
-            stagger: .05
-        }, "-=.5")
-        tl.pause();
+            tl.to('.activator', {
+                background: 'transparent',
+                'borderRadius': '5em 0 0 5em'
+            });
+            tl.to('nav', {
+                'clipPath': 'ellipse(100% 100% at 50% 50%)'
+            }, "-=.5")
+            tl.to('nav img', {
+                opacity: 1,
+                transform: 'translateX(0)',
+                stagger: .05
+            }, "-=.5")
+            tl.pause();
 
-        card.addEventListener('click', () => {
-            toggle = !toggle;
-            if (toggle ? tl.play() : tl.reverse());
-        })
-    </script>
-    <script>
-        window.addEventListener('load', () => {
-            const preloader = document.querySelector('.preloader');
-            preloader.classList.add('preloader-finish');
-        })
+            card.addEventListener('click', () => {
+                toggle = !toggle;
+                if (toggle ? tl.play() : tl.reverse());
+            })
+        </script>
+        <script>
+            window.addEventListener('load', () => {
+                const preloader = document.querySelector('.preloader');
+                preloader.classList.add('preloader-finish');
+            })
 
-        // initialize scrollspy
-        $('body').scrollspy({
-            target: '.dotted-scrollspy'
-        });
+            // initialize scrollspy
+            $('body').scrollspy({
+                target: '.dotted-scrollspy'
+            });
 
-        module.exports = {
-            theme: {
-                screens: {
-                    'sm': '640px',
-                    'md': '768px',
-                    'lg': '1024px',
-                    'xl': '1280px',
-                    '2xl': '1536px',
+            module.exports = {
+                theme: {
+                    screens: {
+                        'sm': '640px',
+                        'md': '768px',
+                        'lg': '1024px',
+                        'xl': '1280px',
+                        '2xl': '1536px',
+                    }
                 }
             }
-        }
-    </script>
-    <script src="https://github.com/smarsha92/theone/blob/theonesite/docs/app..js"></script>
-    <!--End-->
+        </script>
+        <script src="https://github.com/smarsha92/theone/blob/theonesite/docs/app..js"></script>
+        <!--End-->
 </body>
 
 </html>
